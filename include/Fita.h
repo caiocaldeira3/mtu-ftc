@@ -5,14 +5,18 @@ class Fita{
 private:
     /* Attributes */
     int pos = 0;
-    std::string fita;
+    std::vector<char> fita;
     /* End of Attributes */
 public:
     /* Constructors */
-    Fita(std::string st);
+    Fita(std::string _fita);
     /* End of Constructors */
     /* Getters */
     int getPos();
-    std::vector<int> getFita();
-    /* End of Getter */
+    std::vector<char> const& getFita();
+    /* End of Getters */
+    /* Setters */
+    int direita();
+    int esquerda();
+    /* End of Setters */
 };
