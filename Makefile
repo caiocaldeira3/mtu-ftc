@@ -12,7 +12,7 @@ INC := -I include/
 
 main:
 	@mkdir -p $(BINDIR)
-	$(CC) $(CFLAGS) $(INC) $(MAIN) $(SOURCES) $^ -o $(BINDIR)/main
+	$(CC) $(CFLAGS) $(INC) $(MAIN) src/Fita.cc src/Mtu.cc $^ -o $(BINDIR)/main
 
 all: main
 
