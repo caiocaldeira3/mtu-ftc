@@ -9,14 +9,14 @@ private:
     /* End of Attributes */
 public:
     /* Constructors */
-    Fita(std::string _fita);
+    Fita (std::string _fita);
     /* End of Constructors */
     /* Getters */
-    int getPos();
-    std::vector<char> const& getFita();
+    int getPos ();
+    std::vector<char> const& getFita ();
     /* End of Getters */
     /* Setters */
-    int direita();
-    int esquerda();
+    int direita ();
+    int esquerda ();
     /* End of Setters */
 };

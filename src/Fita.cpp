@@ -1,14 +1,14 @@
 #include "Fita.h"
 
 /* Constructors */
-Fita::Fita(std::string _fita){
+Fita::Fita (std::string _fita){
     for (char c : _fita) 
         this->fita.emplace_back(c);
 }
 /* End of Constructors */
 
 /* Getters */
-int Fita::getPos(){
+int Fita::getPos () {
     return this->pos;
 }
 std::vector<char> const& Fita::getFita(){
@@ -17,10 +17,10 @@ std::vector<char> const& Fita::getFita(){
 /* End of Getters */
 
 /* Setters */
-int Fita::direita() {
+int Fita::direita () {
    return this->pos++; 
 }
-int Fita::esquerda() {
+int Fita::esquerda () {
     return this->pos--;
 }
 /* End of Setters */
