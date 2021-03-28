@@ -1,22 +1,32 @@
 #pragma once
 #include<bits/stdc++.h>
 
+/* Auxiliary Functions */
+std::vector<std::string> particionaStr (std::string st, std::string prt, int endPos);
+/* End of Auxiliary Functions */
+
 class Fita{
 private:
     /* Attributes */
     int pos = 0;
-    std::vector<char> fita;
+    std::vector<std::string> fita;
     /* End of Attributes */
 public:
     /* Constructors */
-    Fita (std::string _fita);
+    Fita (void) {};
+    Fita (std::string const& _fita);
     /* End of Constructors */
     /* Getters */
-    int getPos ();
-    std::vector<char> const& getFita ();
+    int getPos (void);
+    std::string getStrPos (void);
+    std::vector<std::string> const& getFita (void);
     /* End of Getters */
     /* Setters */
-    int direita ();
-    int esquerda ();
+    void write (std::string const& stW);
+    int direita (void);
+    int esquerda (void);
     /* End of Setters */
+    /* Auxiliary Functions */
+    void debug (void);
+    /* End of Auxiliary Functions */
 };

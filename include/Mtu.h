@@ -1,10 +1,5 @@
 #pragma once
-
 #include "Fita.h"
-
-/* Auxiliary Functions */
-std::vector<std::string> particionaStr(std::string st);
-/* End of Auxiliary Functions */
 
 class Mtu{
 private:
@@ -16,21 +11,28 @@ private:
     /* End of Attributes*/
 
     /* Setters and Updates */
-    void setFita(std::string fitaStr, int fitaId);
-    void setTransicoes(std::string transicoesStr);
-    void setEstadosFinais(std::string estadosFinaisStr);
+    void setFita (std::string const& fitaStr, int fitaId);
+    void setTransicoes (int lastState);
+    void setEstadosFinais (int lastState);
     /* End of Setters and Updates */
+    /* Auxiliary Functions */
+    std::string const buscaTransicao (std::string const& rgPref);
+    bool verificaEstadoFinal ();
+    /* End of Auxiliary Functions */
 public:
     /* Constructors */
-    Mtu(std::string Mw);
+    Mtu (std::string const& Mw);
     /* End of Constructors */
 
-    /* Route Checkers */
-    /* End of Route Checkers */
-
     /* Getters */
-    void getFita(int fitaId);
-    std::vector<std::string> getListaEstadosFinais();
-    std::vector<std::string> getListaTransicoes();
+    Fita const& getFita (int fitaId);
+    std::string const& getMaquina (void);
+    std::string const& getWord (void);
+    std::vector<std::string> const& getListaEstadosFinais (void);
+    std::vector<std::string> const& getListaTransicoes (void);
     /* End of Getters */
+
+    /* Problem Solver */
+    std::string wEstadoFinal (void);
+    /* End of Problem Solver */
 };
