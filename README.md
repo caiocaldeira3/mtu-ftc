@@ -21,17 +21,17 @@ Onde R<Ei> e R<Ef> representam o estado inicial e o estado após escrita respect
 
 ## Execução
 
-> make
-> Compila o código
+> make  
+>> Compila o código
 
-> make run
-> Compila o código e roda o programa, aceitando strings pelo terminal.
+> make run  
+>> Compila o código e roda o programa, aceitando strings pelo terminal.
 
-> make run-tests
-> Roda o programa, aceitando strings pelo terminal.
+> make run-tests  
+>> Roda o programa, aceitando strings pelo terminal.
 
-> make clean
-> Limpa executáveis e resuldados de testes do repositório.
+> make clean  
+>> Limpa executáveis e resuldados de testes do repositório.
 
 Ambos ```make run``` e ```make run-tests``` aceitam como argumenta ARGS="nome_do_arquivo", caso seja do interesse criar arquivos de teste.
 
