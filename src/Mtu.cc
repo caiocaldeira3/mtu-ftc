@@ -47,30 +47,20 @@ Mtu::Mtu (std::string const& Mw) {
         this->M = "";
         return;
     }
-
-    std::cout << M << " " << w << std::endl;
     size_t lastState = Mw.find("00");
     if (lastState == wpos) {
         return;
     }
 
     this->setEstadosFinais(lastState);
-    for(std::string const& st: this->estadosFinais)
-        std::cout << st << "aq ? " << std::endl;
-    std::cout << std::endl;
 
     this->setFita(Mw.substr(lastState, Mw.size() - lastState), 0);
     this->setTransicoes(lastState + 2);
 
-    for(std::string const& st: this->transicoes)
-        std::cout << st << std::endl;
-    std::cout << std::endl;
-
     this->setFita(this->w, 1);
-    this->fitas[1].debug();
-
+    
     std::string const dummy = "1";
-    this->setFita(dummy, 0);
+    this->setFita(dummy, 2);
 }
 /* End of Constructors */
 
@@ -95,7 +85,7 @@ std::vector<std::string> const& Mtu::getListaTransicoes (void) {
 /* Problem Solver */
 std::string Mtu::wEstadoFinal (void) {
     int op = 0;
-    while (this->fitas[1].getPos() < 1000 && this->fitas[2].getPos() < 1000 && op < 1000) {
+    while (op < 1000) {
 
         std::string wordPos = this->fitas[1].getStrPos();
         std::string statePos = this->fitas[2].getStrPos();
@@ -106,8 +96,8 @@ std::string Mtu::wEstadoFinal (void) {
         if (!trans.empty()) {
             std::vector<std::string> partTrans = particionaStr(trans, "0", trans.size());
 
-            this->fitas[1].write(partTrans[2]);
-            this->fitas[2].write(partTrans[3]);
+            this->fitas[1].write(partTrans[3]);
+            this->fitas[2].write(partTrans[2]);
 
             if (partTrans[4] == "1") {
                 this->fitas[1].direita();
@@ -118,12 +108,12 @@ std::string Mtu::wEstadoFinal (void) {
             op++;
         } else {
             if (this->verificaEstadoFinal()) {
-                return "A palavra pertence à linguagem.";
+                return "Aceita";
             } else {
-                return "A palavra não pertence à linguagem.";
+                return "Não aceita";
             }
         }
     }
-    return "A palavra não pôde ser processada em menos que 1000 passos.";
+    return "Não aceita";
 }
 /* End of Problem Solver */

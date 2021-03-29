@@ -8,7 +8,7 @@ std::vector<std::string> particionaStr (std::string st, std::string prt, int end
 class Fita{
 private:
     /* Attributes */
-    int pos = 0;
+    size_t pos = 0;
     std::vector<std::string> fita;
     /* End of Attributes */
 public:

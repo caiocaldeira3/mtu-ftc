@@ -39,9 +39,16 @@ void Fita::write (std::string const& stW) {
     this->fita[this->pos] = stW;
 }
 int Fita::direita (void) {
+    if (this->pos + 1 == this->fita.size()) {
+        this->fita.push_back("");
+    }
     return this->pos++; 
 }
 int Fita::esquerda (void) {
+    if (this->pos == 0) {
+        this->fita.insert(this->fita.begin(), "");
+        return this->pos;
+    }
     return this->pos--;
 }
 /* End of Setters */
