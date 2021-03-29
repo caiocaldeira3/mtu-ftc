@@ -4,20 +4,20 @@
 Partindo da proposta de um trabalho de FTC, onde deveríamos implementar uma Máquina de Turing Universal (MTU), este código tem como objetivo receber uma linguagem e identificar, a partir da informação sobre uma outra Máquina e uma palavra, se uma palavra pertence ou não à linguagem da máquina.
 
 ## Descrição de Entrada
-A entrada do programa se dá na forma de uma string de seguinte estrutura:
+A entrada do programa se dá na forma de uma string de seguinte estrutura:  
 
-> R<M>000R<w>
+> R\<M\>000R\<w\>  
 
-Onde M representa a Máquina de Turing a ser simulada e w a palavra que buscamos identificar pertencimento.
-R<M> por conseguinte possui a seguinte estrutura:
+Onde M representa a Máquina de Turing a ser simulada e w a palavra que buscamos identificar pertencimento.  
+R\<M\> por conseguinte possui a seguinte estrutura:  
 
-> R<EF>00<T1>00<T2>00...<Tn>00
-Onde R<EF> representam os estados finais, separados por 0, e R<Ti> representam as regras de transição de nossa máquina.
+> R\<E1\>0\<E2\>0...R\<En\>00\<T1\>00\<T2\>00...\<Tn\>00  
+Onde R\<E1-En\> representam os estados finais, separados por 0, e R\<T1-TN\> representam as regras de transição de nossa máquina, separados por n.  
 
-Por fim, R<Ti> possui a seguinte configuração:
+Por fim, R\<Ti\> possui a seguinte configuração:  
 
-> R<Ei>0R<ai>0R<Ef>0R<af>0R<D>
-Onde R<Ei> e R<Ef> representam o estado inicial e o estado após escrita respectivamente, R<ai> e R<af> representam as strings da palavra inicial e após escrita respectivamente e R<D> representa a direção para onde andaremos na nossa palavra, atualmente "1" uma posição para direita e qualquer outro valor uma posição para esquerda.
+> R\<Ei\>0R\<ai\>0R\<Ef\>0R\<af\>0R\<D\>  
+Onde R\<Ei\> e R\<Ef\> representam o estado inicial e o estado após escrita respectivamente, R\<ai\> e R\<af\> representam as strings da palavra inicial e após escrita respectivamente e R\<D\> representa a direção para onde andaremos na nossa palavra, atualmente "1" uma posição para direita e qualquer outro valor uma posição para esquerda.  
 
 ## Execução
 
