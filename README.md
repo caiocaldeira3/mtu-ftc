@@ -33,13 +33,13 @@ Onde R<Ei> e R<Ef> representam o estado inicial e o estado após escrita respect
 > make clean  
 >> Limpa executáveis e resuldados de testes do repositório.
 
-Ambos ```make run``` e ```make run-tests``` aceitam como argumenta ARGS="nome_do_arquivo", caso seja do interesse criar arquivos de teste.
+Ambos ```make run``` e ```make run-tests``` aceitam como argumenta ARGS="nome_do_arquivo", caso seja do interesse criar arquivos de teste. Todos os arquivos de teste devem ser armazenados dentro de tests/.
 
 Por fim, disponibilizei o script *run_tests.sh*, que, por padrão roda os 10 primeiros testes salvando seus resultados em output/, mas que pode ser estendido a partir da edição do script a medida que novos testes são adicionados.
 
 
-## Futuras modificações
-Alterar as bibliotecas de include do C++ para que seja incluído apenas o necessário, reduzindo tempo de compilação.
-Alterar as estruturas de dados utilizadas nas Fitas de vector para deque, dado que queremos inserir elementos tanto na última como na primeira posição.
-Alterar o armazenamento das regras de transição de vectors para unordered_map (talvez uma Trie) onde a chave é o prefixo da transição e o valor o sufixo.
-Adaptar os retornos e entradas das funções, principalmente construtores, para fora do escopo do trabalho.
+## Futuras Modificações
+Alterar as bibliotecas de include do C++ para que seja incluído apenas o necessário, reduzindo tempo de compilação.  
+Alterar as estruturas de dados utilizadas nas Fitas de vector para deque, dado que queremos inserir elementos tanto na última como na primeira posição.  
+Alterar o armazenamento das regras de transição de vectors para unordered_map (talvez uma Trie) onde a chave é o prefixo da transição e o valor o sufixo.  
+Adaptar os retornos e entradas das funções, principalmente construtores, para fora do escopo do trabalho.  
