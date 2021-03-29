@@ -2,21 +2,28 @@ CC := g++
 SRCDIR := src
 BINDIR := bin
 
-MAIN := program/main.cpp
+MAIN := program/main.cc
 
-SRCEXT := cpp
+SRCEXT := cc
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 
-CFLAGS := -g -Wall -O3 -std=c++17
+CFLAGS := -std=c++17
+
 INC := -I include/
 
 main:
 	@mkdir -p $(BINDIR)
-	$(CC) $(CFLAGS) $(INC) $(MAIN) src/Fita.cc src/Mtu.cc $^ -o $(BINDIR)/main
+	$(CC) $(CFLAGS) $(INC) $(SOURCES) $(SRC) $(MAIN) $^ -o $(BINDIR)/main
 
 all: main
 
 run: main
-	$(BINDIR)/main
-	
+	$(BINDIR)/main ${ARGS}
+
+run-test:
+	$(BINDIR)/main ${ARGS}
+
+clean:
+	$(RM) -r bin outputs/
+
 .PHONY: clean coverage
