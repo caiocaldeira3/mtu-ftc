@@ -11,13 +11,9 @@ int main(int argc, char **argv){
         std::ifstream inFile(fileName);
 
         inFile >> Mw;
-    } else {
-        std::cin >> Mw;
-    }
 
-    Mtu mtu(Mw);
+        Mtu mtu(Mw);
 
-    if (argc >= 2) {
         std::string fileName = argv[1];
         fileName = "outputs/" + fileName;
 
@@ -25,8 +21,11 @@ int main(int argc, char **argv){
 
         outFile << mtu.wEstadoFinal() << std::endl;
     } else {
-        std::cout << mtu.wEstadoFinal() << std::endl;
+        while(std::cin >> Mw) {
+            Mtu mtu(Mw);
+            std::cout << mtu.wEstadoFinal() << std::endl;
+        }
     }
-
+    
     return 0;
 }
