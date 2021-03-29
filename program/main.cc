@@ -5,19 +5,19 @@ int main(int argc, char **argv){
     
     std::string Mw;
     if (argc >= 2) {
-        std::string fileName = argv[1];
-        fileName = "tests/" + fileName;
+        std::string inName = argv[1];
+        inName = "tests/" + inName;
 
-        std::ifstream inFile(fileName);
+        std::ifstream inFile(inName);
 
         inFile >> Mw;
 
         Mtu mtu(Mw);
 
-        std::string fileName = argv[1];
-        fileName = "outputs/" + fileName;
+        std::string outName = argv[1];
+        outName = "outputs/" + outName;
 
-        std::ofstream outFile(fileName);
+        std::ofstream outFile(outName);
 
         outFile << mtu.wEstadoFinal() << std::endl;
     } else {
@@ -26,6 +26,6 @@ int main(int argc, char **argv){
             std::cout << mtu.wEstadoFinal() << std::endl;
         }
     }
-    
+
     return 0;
 }
